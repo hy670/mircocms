@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta charset="utf-8">
+    <title>{% block title %}欢迎光临{% endblock title %} - MircoCRM</title>
+
+    {% block css %}
+
+    {% endblock css %}
+
+    {% block js %}
+
+    {% endblock js %}
+  </head>
+  <body>
+    <div class="container" >
+        <div class="row">
+
+            <span>MircoCRM</span>
+
+        <ul class="nav nav-pills">
+            {% for column in nav_display_columns %}
+                <li ><a href="{{ column.get_absolute_url }}">{{ column.name }}</a></li>
+            {% endfor %}
+        </ul>
+
+        </div>
+    </div>
+
+
+
+
+     {% block content %}
+
+     {% endblock content %}
+
+  </body>
+</html>
